@@ -120,7 +120,7 @@ Which of these priors is the most diffuse (i.e. dispersed) and which is the most
 
 *An interesting side note about why we are favoring quantile-based rather than moment-based measures of distributional properties here: The mean and variance for the Cauchy distribution are undefined, so MC or "plug-in" approximations of these moments will be unstable, defying the Law of Large Numbers. This is demonstrated in the simulation performed by the following code, which illustrates the behavior of the MC sample mean of a Cauchy distribution. Note that this code takes several seconds to run because rendering the plot for the cumulative mean of 5 million draws is slow. _You do not need to include this illustration as a part of your answer to Question 1.3._*
 
-```{r Illustrating unstable plug-in estimates of the Cauchy mean, eval=FALSE}
+```{r Illustrating unstable plug-in estimates of the Cauchy mean, eval=TRUE}
 set.seed(1978);  cauchyMC1 = rcauchy(n = 5000000, location = 0, scale = 10)
 set.seed(2021); cauchyMC2 = rcauchy(n = 5000000, location = 0, scale = 10)
 meanPlugin1 = cummean(cauchyMC1)
@@ -157,7 +157,7 @@ After a sleepless night, our poor patient finally realizes that they are confuse
 
 ## 2.2. The questions
 ### Question 2.1
-Treat $C$ as an estimand---an unknown quantity that you would really like to know---and treat $T$ as observed evidence. Taken together, the epidemiologic term **sensitivity** and its complement $P(C=0)=1-P(C=1)$ correspond with one of the probability functions in Bayes' Rule. Likewise, the **PPV** and **NPV** correspond with another of the probability functions in Bayes' Rule. Finally, the **sensitivity**, **specificity**, the probability of a false positive, and the probability of a false negative correspond with one of the probability functions in Bayes' Rule. Which components of Bayes' Rule correspond with each of these sets of clinical/epidemiological concepts?
+Treat $C$ as an estimand---an unknown quantity that you would really like to know---and treat $T$ as observed evidence. Taken together, the epidemiologic term **prevalence** and its complement $P(C=0)=1-P(C=1)$ correspond with one of the probability functions in Bayes' Rule. Likewise, the **PPV** and **NPV** correspond with another of the probability functions in Bayes' Rule. Finally, the **sensitivity**, **specificity**, the probability of a false positive, and the probability of a false negative correspond with one of the probability functions in Bayes' Rule. Which components of Bayes' Rule correspond with each of these sets of clinical/epidemiological concepts?
 
 ### Question 2.2
 With a positive test and the known values of sensitivity, specificity, and prevalence given above, calculate the PPV.
